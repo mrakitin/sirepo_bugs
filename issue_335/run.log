@@ -1,0 +1,45 @@
+../../../../../../../../../.pyenv/versions/2.7.10/lib/python2.7/site-packages/pykern/pksubprocess.py:63:check_call_with_signals 5174: started: ['mpiexec', '--bind-to', 'none', '-n', '8', '/home/vagrant/.pyenv/versions/2.7.10/bin/python2.7', 'mpi_run.py']
+../../../../../../../../../.pyenv/versions/2.7.10/lib/python2.7/site-packages/pykern/pksubprocess.py:72:check_call_with_signals 5174: exception: ['mpiexec', '--bind-to', 'none', '-n', '8', '/home/vagrant/.pyenv/versions/2.7.10/bin/python2.7', 'mpi_run.py'] RuntimeError: error exit(1)
+  File "/home/vagrant/.pyenv/versions/2.7.10/bin/sirepo", line 9, in <module>
+    load_entry_point('sirepo', 'console_scripts', 'sirepo')()
+  File "/home/vagrant/src/radiasoft/sirepo/sirepo/sirepo_console.py", line 18, in main
+    return pkcli.main('sirepo')
+  File "/home/vagrant/.pyenv/versions/2.7.10/lib/python2.7/site-packages/pykern/pkcli/__init__.py", line 131, in main
+    argh.dispatch(parser, argv=argv)
+  File "/home/vagrant/.pyenv/versions/2.7.10/lib/python2.7/site-packages/argh/dispatching.py", line 174, in dispatch
+    for line in lines:
+  File "/home/vagrant/.pyenv/versions/2.7.10/lib/python2.7/site-packages/argh/dispatching.py", line 277, in _execute_command
+    for line in result:
+  File "/home/vagrant/.pyenv/versions/2.7.10/lib/python2.7/site-packages/argh/dispatching.py", line 260, in _call
+    result = function(*positional, **keywords)
+  File "/home/vagrant/src/radiasoft/sirepo/sirepo/pkcli/srw.py", line 71, in run_background
+    mpi.run_script(script)
+  File "/home/vagrant/src/radiasoft/sirepo/sirepo/mpi.py", line 67, in run_script
+    return run_program([sys.executable or 'python', fn])
+  File "/home/vagrant/src/radiasoft/sirepo/sirepo/mpi.py", line 41, in run_program
+    env=env,
+  File "/home/vagrant/.pyenv/versions/2.7.10/lib/python2.7/site-packages/pykern/pksubprocess.py", line 67, in check_call_with_signals
+    raise RuntimeError('error exit({})'.format(rc))
+
+Traceback (most recent call last):
+  File "/home/vagrant/.pyenv/versions/2.7.10/bin/sirepo", line 9, in <module>
+    load_entry_point('sirepo', 'console_scripts', 'sirepo')()
+  File "/home/vagrant/src/radiasoft/sirepo/sirepo/sirepo_console.py", line 18, in main
+    return pkcli.main('sirepo')
+  File "/home/vagrant/.pyenv/versions/2.7.10/lib/python2.7/site-packages/pykern/pkcli/__init__.py", line 131, in main
+    argh.dispatch(parser, argv=argv)
+  File "/home/vagrant/.pyenv/versions/2.7.10/lib/python2.7/site-packages/argh/dispatching.py", line 174, in dispatch
+    for line in lines:
+  File "/home/vagrant/.pyenv/versions/2.7.10/lib/python2.7/site-packages/argh/dispatching.py", line 277, in _execute_command
+    for line in result:
+  File "/home/vagrant/.pyenv/versions/2.7.10/lib/python2.7/site-packages/argh/dispatching.py", line 260, in _call
+    result = function(*positional, **keywords)
+  File "/home/vagrant/src/radiasoft/sirepo/sirepo/pkcli/srw.py", line 71, in run_background
+    mpi.run_script(script)
+  File "/home/vagrant/src/radiasoft/sirepo/sirepo/mpi.py", line 67, in run_script
+    return run_program([sys.executable or 'python', fn])
+  File "/home/vagrant/src/radiasoft/sirepo/sirepo/mpi.py", line 41, in run_program
+    env=env,
+  File "/home/vagrant/.pyenv/versions/2.7.10/lib/python2.7/site-packages/pykern/pksubprocess.py", line 67, in check_call_with_signals
+    raise RuntimeError('error exit({})'.format(rc))
+RuntimeError: error exit(1)
