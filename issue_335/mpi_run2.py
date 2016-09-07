@@ -260,7 +260,7 @@ varParam = srwl_bl.srwl_uti_ext_options([
 import srwl_bl
 v = srwl_bl.srwl_uti_parse_options(varParam, use_sys_argv=False)
 source_type, mag = srwl_bl.setup_source(v)
-v.wm_na = v.sm_na = 1
+# v.wm_na = v.sm_na = 1
 # Number of "iterations" per save is best set to num processes
 v.wm_ns = v.sm_ns = 2
 op = set_optics()
