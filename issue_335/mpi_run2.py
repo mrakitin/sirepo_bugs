@@ -162,7 +162,7 @@ varParam = srwl_bl.srwl_uti_ext_options([
     ['sm_pra', 'f', 1.0, 'azimuthal integration precision parameter for multi-e spectrum vs photon energy calculation'],
     ['sm_meth', 'i', 1, 'method to use for spectrum vs photon energy calculation in case of arbitrary input magnetic field: 0- "manual", 1- "auto-undulator", 2- "auto-wiggler", -1- dont use this accurate integration method (rather use approximate if possible)'],
     ['sm_prec', 'f', 0.01, 'relative precision for spectrum vs photon energy calculation in case of arbitrary input magnetic field (nominal value is 0.01)'],
-    ['sm_nm', 'i', 100000, 'number of macro-electrons for calculation of spectrum in case of arbitrary input magnetic field'],
+    ['sm_nm', 'i', 100, 'number of macro-electrons for calculation of spectrum in case of arbitrary input magnetic field'],
     ['sm_na', 'i', 5, 'number of macro-electrons to average on each node at parallel (MPI-based) calculation of spectrum in case of arbitrary input magnetic field'],
     ['sm_ns', 'i', 5, 'saving periodicity (in terms of macro-electrons) for intermediate intensity at calculation of multi-electron spectrum in case of arbitrary input magnetic field'],
     ['sm_type', 'i', 1, 'calculate flux (=1) or flux per unit surface (=2)'],
@@ -258,9 +258,9 @@ varParam = srwl_bl.srwl_uti_ext_options([
 ])
 
 import srwl_bl
-v = srwl_bl.srwl_uti_parse_options(varParam, use_sys_argv=False)
+v = srwl_bl.srwl_uti_parse_options(varParam, use_sys_argv=True)
 source_type, mag = srwl_bl.setup_source(v)
-# v.wm_na = v.sm_na = 1
+v.wm_na = v.sm_na = 5
 # Number of "iterations" per save is best set to num processes
 v.wm_ns = v.sm_ns = 2
 op = set_optics()
